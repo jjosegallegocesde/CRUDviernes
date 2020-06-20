@@ -36,18 +36,37 @@
 
         }
 
-        
-        //Escribir en la base de datos
-        public function alterarBaseDatos($sentenciaSQL){
+
+        //Escribir en la base de datos (insertar, actualizar, borrar)
+        public function alterarBaseDatos($consultaSQL){
 
             $this->conectarConBaseDatos();
-            $resultado=$this->conexion->query($sentenciaSQL);
+            $resultado=$this->conexion->query($consultaSQL);
+            
             return($resultado);
+            $this->conexion->close();
+        }
+
+        //Lectura en la base de datos (buscar)
+        public function consultarEnBaseDatos($consultaSQL){
+
+            $this->conectarConBaseDatos();
+            $resultado=$this->conexion->query($consultaSQL);
+            
+            $arregloFilas=array();
+            foreach($resultado as $registros){
+                $arregloFilas[]=$registros;
+            }
+            
+            return($arregloFilas);
             $this->conexion->close();
 
 
 
+
         }
+
+        
 
 
 

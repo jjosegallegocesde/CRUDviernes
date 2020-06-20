@@ -38,6 +38,23 @@
                     
                     <button type="submit" class="btn btn-success btn-block" id="btnEnviar" name="btnEnviar">Enviar</button>
                 </form>
+
+                <form action="consultarDatos.php" method="POST" class="mt-5 mb-5">
+                    <div class="form-group">
+                        <label for="nombreBuscar">Nombre a buscar:</label>
+                        <input type="text" class="form-control" id="nombreBuscar" name="nombreBuscar">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-info btn-block" id="btnBuscar" name="btnBuscar">Buscar</button>
+                </form>
+
+                <form action="eliminarDatos.php" method="POST" class="mt-5 mb-5">
+                    <div class="form-group">
+                        <label for="nombreEliminar">Nombre a eliminar:</label>
+                        <input type="text" class="form-control" id="nombreEliminar" name="nombreEliminar">
+                    </div>
+                    <button type="submit" class="btn btn-danger btn-block" id="btnEliminar" name="btnEliminar">Eliminar</button>
+                </form>
                 
                 
                 </div>
